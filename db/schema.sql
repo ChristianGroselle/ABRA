@@ -1,2 +1,2 @@
--- DROP DATABASE IF EXISTS user_db;
--- CREATE DATABASE user_db;
+DROP DATABASE IF EXISTS abra_user_db;
+CREATE DATABASE abra_user_db;
