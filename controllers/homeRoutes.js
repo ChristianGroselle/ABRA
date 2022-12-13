@@ -5,9 +5,16 @@ router.get('/', async (req, res) => {
   res.render('homepage');
 });
 
-router.get('/shared', async (req, res) => {
+router.get('/discover', async (req, res) => {
   // Send the rendered Handlebars.js template back as the response
-  res.render('sharedRecipes');
+  res.render('discover');
 });
+
+router.get('/my', async (req, res) => {
+  // Send the rendered Handlebars.js template back as the response
+  res.render('myrecipes');
+});
+
+
 
 module.exports = router;
