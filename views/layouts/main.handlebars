@@ -24,9 +24,10 @@
   <header>
 
     <nav>
-      
+
       <div class="nav-wrapper z-depth-2 orange">
         <a href="/" class="brand-logo">ABRA</a>
+        <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
           <li><a href="discover">Discover</a></li>
           <li><a href="myrecipes">My Recipes</a></li>
@@ -46,14 +47,15 @@
   <!-- navbar for smaller screens (hamburger bars) -->
   <ul class="sidenav" id="mobile-demo">
 
-    <li><a href="/ABRA/views/login.handlebars">Login</a></li>
-    <li><a href="/ABRA/views/discover.handlebars">Discover</a></li>
-    <li><a href="/ABRA/views/myRecipes.handlebars">My Recipes</a></li>
+    <li><a href="discover">Discover</a></li>
+    <li><a href="myrecipes">My Recipes</a></li>
+    <li><a href="shared">Shared Recipes</a></li>
     {{#if logged_in}}
-    <li>
-      <button class="btn" id="logout">Logout</button>
-    </li>
+      <li><a id="logout">Logout</a></li>
     {{/if}}
+    {{#unless logged_in}}
+      <li><a href="login">Login</a></li>
+    {{/unless}}
   
   </ul>
 
@@ -70,8 +72,8 @@
           <div class="container">
             <div class="row">
               <div class="col l6 s12">
-                <h5 class="white-text">Footer Content</h5>
-                <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+                <h5 class="white-text">ABRA: A Better Recipe App</h5>
+                <p class="grey-text text-lighten-4">Christian G. Cody P. Corbin C.</p>
               </div>
               <div class="col l4 offset-12 s12 right">
                 <h5 class="white-text">Links</h5>
@@ -104,7 +106,7 @@
   <!-- Linking Scripts -->
 
   <script src="/js/main.js"></script>
-  <script src="/js/materialize//js/materialize.min.js"></script>
+  <script src="/js/materialize.min.js"></script>
 
   </body>
 
