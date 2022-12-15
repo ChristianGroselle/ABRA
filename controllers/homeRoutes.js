@@ -1,5 +1,6 @@
 const router = require("express").Router();
 const { User } = require("../models");
+const { FavRecipes } = require("../models");
 const withAuth = require('../utils/auth');
 
 router.get("/", async (req, res) => {
@@ -26,15 +27,27 @@ router.get("/login", (req, res) => {
 router.get('/discover', withAuth, async (req, res) => {
   // Send the rendered Handlebars.js template back as the response
   res.render('discover', {
-    logged_in: req.session.logged_in,
+    logged_in: req.session.logged_in, 
+    user: req.session.user_id
   });
 });
 
-router.get('/myrecipes', withAuth, async (req, res) => {
-  // Send the rendered Handlebars.js template back as the response
-  res.render('myrecipes', {
-    logged_in: req.session.logged_in,
-  });
+router.get('/myrecipes/', withAuth, async (req, res) => {
+  try {
+    const dbMyRecipesData = await FavRecipes.findAll({
+      where: {
+        user_id: req.session.user_id
+      }
+    });
+    //const recipes = dbMyRecipesData.get({ plain: true });
+    res.render('myrecipes', {
+      recipes: dbMyRecipesData,
+      logged_in: req.session.logged_in,
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
 });
 
 router.get("/signup", async (req, res) => {

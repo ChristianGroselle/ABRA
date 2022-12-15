@@ -1,5 +1,3 @@
-const { DataTypes } = require("sequelize");
-const { DataTypes } = require("sequelize");
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
 
@@ -13,12 +11,28 @@ FavRecipes.init(
       primaryKey: true,
       autoIncrement: true,
     },
+    ed_id: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
     name: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    bulk_data: {
+    time: {
       type: DataTypes.STRING,
+      allowNull: false,
+    },
+    yield: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    url: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    img: {
+      type: DataTypes.TEXT,
       allowNull: false,
     },
     shared: {

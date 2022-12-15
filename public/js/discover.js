@@ -3,13 +3,6 @@ const searchBtnEl = document.querySelector('#searchBtn');
 const listEl = document.querySelector('#recList');
 const prevBtnEl = document.querySelector('#prevBtn');
 const nextBtnEl = document.querySelector('#nextBtn');
-const saveBtnEl = document.querySelectorAll('.saveBtn');
-
-function testBtn(){
-    console.log('test');
-    let inputStr = searchEl.value.trim;
-    console.log(inputStr);
-}
 
 function buildCards(rTitle, rLink, rImg, rTime, rYield, rID){
     let template = `<li>
@@ -48,8 +41,7 @@ function searchRecipes(){
     listEl.innerHTML = "";
     
     if(inputStr){
-        //let formatedStr = inputStr.replace(/ /g, '%20');
-        //console.log(inputStr);
+
         let fetchUrl = `https://api.edamam.com/api/recipes/v2?type=public&q=${inputStr}&app_id=aa134e4a&app_key=21cd6c25c3b3eb0bb2958f0c347c4f1b&field=url&field=label&field=images&field=totalTime&field=uri&field=yield`
         currUrl = fetchUrl;
         fetch(fetchUrl)
@@ -86,24 +78,42 @@ function searchRecipes(){
     } else {
         alert('please add an item to search');
     }
-
-
 }
 
 function addSavedRecipe(targetEl){
+    console.log('testing');
     data = targetEl.dataset;
-    let bulkDataObj = {id:data.id, title:data.title, time:data.time, yield:data.yield, url:data.url, img:data.img};
-    console.log(bulkDataObj);
+    let dataObj = {edId:data.id, name:data.title, time:data.time, yield:data.yield, url:data.url, img:data.img};
+    console.log(dataObj);
+    console.log(JSON.stringify(dataObj));
+    sendRecipe(JSON.stringify(dataObj));
 }
 
+const sendRecipe = async (newRecipe) => {
+    const response = await fetch("/api/recipes/", {
+      method: "POST",
+      body: newRecipe, // string or object
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    const myJson = await response.json(); //extract JSON from the http response
+    if (response.ok) {
+      alert('Recipe added to Saved!');
+    } else {
+      alert("Please try signing up again");
+    }
+  };
 
 searchBtnEl.addEventListener('click', searchRecipes);
-saveBtnEl.addEventListener('click', function(event) {
-    event.preventDefault();
-    console.log(this.dataset.title);
-})
 
-//pages on hold for now
-// nextBtnEl.addEventListener('click', nextPage);
-// prevBtnEl.addEventListener('click', previousPage);
+document.addEventListener("click", function(e){
+    const target = e.target.closest(".saveBtn"); // Or any other selector.
+  
+    if(target){
+      console.log('click');
+      console.log(target.dataset);
+      addSavedRecipe(target);
+    }
+  })
 
