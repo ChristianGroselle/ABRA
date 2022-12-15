@@ -1,23 +1,28 @@
-
-<!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="css/style.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-         <!--Import materialize.css-->
-      <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="css/style.css" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <!--Import materialize.css-->
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="css/materialize.min.css"
+      media="screen,projection"
+    />
     <title>ABRA - Home</title>
-</head>
+  </head>
 
-<body>
-  
-  <header>
+  <body>
 
-    <nav>
+    <header>
+
+      <nav>
 
       <div class="nav-wrapper z-depth-2 orange">
         <a href="/" class="brand-logo">ABRA</a>
@@ -38,16 +43,16 @@
   </header>
   <ul class="sidenav" id="mobile-demo">
 
-    <li><a href=""></a></li>
-  
-  </ul>
+      <li><a href=""></a></li>
 
-  <main class="">
+    </ul>
 
-    <!-- Render the contents of the sub layout here -->
-    {{{ body }}}
-  
-  </main>
+    <main class="">
+
+      <!-- Render the contents of the sub layout here -->
+      {{{body}}}
+
+    </main>
 
   <footer class="page-footer z-depth-2 orange darken-3">
           <div class="container">
@@ -66,17 +71,19 @@
               </div>
             </div>
           </div>
-          <div class="footer-copyright">
-            <div class="container center">
-            © 2022 ABRA
-            </div>
-          </div>
-        </footer>
-  {{#if logged_in}}
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <div class="container center">
+          © 2022 ABRA
+        </div>
+      </div>
+    </footer>
+    {{#if logged_in}}
       <script src="/js/logout.js"></script>
     {{/if}}
   <script src="/js/materialize.min.js"></script>
 
-</body>
+  </body>
 
 </html>
