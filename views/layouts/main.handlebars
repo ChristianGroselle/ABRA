@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,6 +24,11 @@
         <li><a href="/ABRA/views/login.handlebars">Login</a></li>
         <li><a href="/ABRA/views/discover.handlebars">Discover</a></li>
         <li><a href="/ABRA/views/myRecipes.handlebars">My Recipes</a></li>
+        {{#if logged_in}}
+        <li>
+          <button class="btn" id="logout">Logout</button>
+        </li>
+        {{/if}}
         <!-- My Recipes will direct to login page until user is logged in -->
       </ul>
     </div>
@@ -65,7 +71,9 @@
             </div>
           </div>
         </footer>
-
+  {{#if logged_in}}
+      <script src="/js/logout.js"></script>
+    {{/if}}
   <script src="/ABRA/public/materialize/js/materialize.min.js"></script>
 
 </body>
