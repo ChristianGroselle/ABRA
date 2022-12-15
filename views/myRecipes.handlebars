@@ -53,8 +53,61 @@
         </div>
     </main>
 
-<script src="js/materialize.min.js"></script>
-<script src="js/init.js"></script>
-<script src="js/myRecipes.js"></script>
+                      <div>
+                        Cooking Time:
+                        {{this.dataValues.time}}
+                      </div>
+                      <div>
+                        Feeds:
+                        {{this.dataValues.yield}}
+                      </div>
+                    </span>
+                  </div>
+                </div>
+                <div class="card-action">
+                  <div class="col s4">
+                    <a
+                      class="btn waves-effect waves-light left-align"
+                      href="{{this.dataValues.url}}"
+                      target="_blank"
+                    >Source</a>
+                  </div>
+                  {{#unless this.dataValues.shared}}
+                    <div class="col s4">
+                      <a
+                        class="btn waves-effect waves-light center-align recBtn"
+                        href="#"
+                        data-id="{{this.dataValues.id}}"
+                      >Recommend!</a>
+                    </div>
+                  {{/unless}}
+                  {{#if this.dataValues.shared}}
+                    <div class="col s4">
+                      <a
+                        class="btn waves-effect waves-light center-align unRecBtn"
+                        href="#"
+                        data-id="{{this.dataValues.id}}"
+                      >Un-Share</a>
+                    </div>
+                  {{/if}}
+                  <div class="col s4">
+                    <a
+                      class="btn waves-effect waves-light center-align delBtn"
+                      href="#"
+                      data-id="{{this.dataValues.id}}"
+                    >Remove</a>
+                  </div>
+                </div>
+              </div>
+            </li>
+          {{/each}}
+        </ul>
+      </div>
+    </div>
+  </main>
+
+  <script src="js/materialize.min.js"></script>
+  <script src="js/init.js"></script>
+  <script src="js/myRecipes.js"></script>
 
 </body>
