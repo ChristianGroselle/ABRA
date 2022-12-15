@@ -1,56 +1,72 @@
 <body>
-    <header>
-        <h2>Shared Recipes</h2>
-    </header>
-    <main class="container">
-        <div class="row">
-            <div class="card col s12">
-                <ul class="people_list">
-                    {{#each recipes}}
-                    <li>{{this.dataValues.name}} {{log this}}</li>
-                        <li>
-                            <div class="card-panel offWhite">
-                                <div class="row valign-wrapper">
-                                    <div class="col s4">
-                                        <img src="{{this.dataValues.img}}" alt="" class="circle responsive-img">
-                                    </div>
-                                    <div class="col s8">
-                                        <span class="black-text">
-                                            <h4>{{this.dataValues.name}}</h4>
-                                            
-                                            <div>
-                                                Cooking Time: {{this.dataValues.time}}
-                                            </div>
-                                            <div>
-                                                Feeds: {{this.dataValues.yield}}
-                                            </div>
-                                            <div>
-                                                Shared By: {{this.dataValues.user_id}}
-                                            </div>
-                                            <div>
-                                                Upvotes: {{this.dataValues.upvotes}}
-                                            </div>
-                                        </span>
-                                    </div>
-                                </div>
-                                <div class="card-action">
-                                    <div class="col s4">
-                                        <a class="btn waves-effect waves-light left-align" href="{{this.dataValues.url}}">Source</a>
-                                    </div>
-                                    <div class="col s4">
-                                        <a class="btn waves-effect waves-light center-align voteBtn" href="#" data-id="{{this.dataValues.id}}">Upvote!</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                    {{/each}}
-                </ul>
-            </div>
-        </div>
-    </main>
+  <header>
+    <h2>Shared Recipes</h2>
+  </header>
+  <main class="container">
+    <div class="row">
+      <div class="card col s12">
+        <ul class="people_list">
+          {{#each recipes}}
+            <li>{{this.dataValues.name}} {{log this}}</li>
+            <li>
+              <div class="card-panel offWhite">
+                <div class="row valign-wrapper">
+                  <div class="col s4">
+                    <img
+                      src="{{this.dataValues.img}}"
+                      alt=""
+                      class="circle responsive-img"
+                    />
+                  </div>
+                  <div class="col s8">
+                    <span class="black-text">
+                      <h4>{{this.dataValues.name}}</h4>
 
-<script src="js/materialize.min.js"></script>
-<script src="js/init.js"></script>
-<script src="js/shared.js"></script>
+                      <div>
+                        Cooking Time:
+                        {{this.dataValues.time}}
+                      </div>
+                      <div>
+                        Feeds:
+                        {{this.dataValues.yield}}
+                      </div>
+                      <div>
+                        Shared By:
+                        {{this.dataValues.user_id}}
+                      </div>
+                      <div>
+                        Upvotes:
+                        {{this.dataValues.upvotes}}
+                      </div>
+                    </span>
+                  </div>
+                </div>
+                <div class="card-action">
+                  <div class="col s4">
+                    <a
+                      class="btn waves-effect waves-light left-align"
+                      href="{{this.dataValues.url}}"
+                      target="_blank"
+                    >Source</a>
+                  </div>
+                  <div class="col s4">
+                    <a
+                      class="btn waves-effect waves-light center-align voteBtn"
+                      href="#"
+                      data-id="{{this.dataValues.id}}"
+                    >Upvote!</a>
+                  </div>
+                </div>
+              </div>
+            </li>
+          {{/each}}
+        </ul>
+      </div>
+    </div>
+  </main>
+
+  <script src="js/materialize.min.js"></script>
+  <script src="js/init.js"></script>
+  <script src="js/shared.js"></script>
 
 </body>
