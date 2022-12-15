@@ -1,3 +1,5 @@
+const { DataTypes } = require("sequelize");
+const { DataTypes } = require("sequelize");
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
 
@@ -14,6 +16,18 @@ FavRecipes.init(
     name: {
       type: DataTypes.STRING,
       allowNull: false,
+    },
+    bulk_data: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    shared: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: 0,
+    },
+    upvotes: {
+      type: DataTypes.INTEGER,
+      defaultValue: 0,
     },
     user_id: {
       type: DataTypes.INTEGER,

@@ -1,9 +1,9 @@
 const router = require('express').Router();
 const { Recipe } = require('../../models')
-router.get('/:id', async (req, res) => {
+router.get('/', async (req, res) => {
     try {
     // Search the database for a user with an id that matches params
-    const userData = await Recipe.findByPk(req.params.id);
+    const recipeData = await Recipe.findAll(req.params.id);
     console.log(userData)
     // We use .get({ plain: true }) on the object to serialize it so that it only includes the data that we need. 
     const user = userData.get({ plain: true });

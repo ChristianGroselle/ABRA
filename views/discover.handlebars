@@ -1,12 +1,33 @@
 <body>
 
-    <header class="">
-
-        <h1>Body from homepage.handlebars</h1>
-        <h2>Footer will move down as we add content</h2>
-
-    </header>
-
+    <main class="container">
+        <div class="row">
+            <form class="col s12">
+                <div class="">
+                    <div class="input-field col s12">
+                        <input placeholder="What are you hungry for?" id="searchInput" type="text" class="validate">
+                        <label for="first_name">Search</label>
+                    </div>
+                </div>
+            </form>
+            <div class="col s4">
+                <a class="waves-effect waves-light btn" id="prevBtn">Previous</a>
+            </div>
+            <div class="col s4">
+                <a class="waves-effect waves-light btn" id="searchBtn">Search</a>
+            </div>
+            <div class="col s4">
+                <a class="waves-effect waves-light btn" id="nextBtn">Next</a>
+            </div>
+            <div class="card col s12">
+                <ul id="recList">
+                    
+                </ul>
+            </div>
+        </div>
+    </main>
 <script src="js/materialize.min.js"></script>
+<script src="js/init.js"></script>
+<script src="js/discover.js"></script>
 
 </body>
