@@ -1,6 +1,7 @@
 const router = require('express').Router();
-const User = require('../../models/User');
+const { User } = require('../../models');
 
+//find user by id
 router.get('/:id', async (req, res) => {
     try {
       // Search the database for a user with an id that matches params
@@ -14,6 +15,7 @@ router.get('/:id', async (req, res) => {
     }
   });
 
+//create new user
 router.post('/', async (req, res) => {
   try {
     const dbUserData = await User.create({
@@ -31,6 +33,16 @@ router.post('/', async (req, res) => {
   } catch (err) {
       console.log(err);
       res.status(500).json(err);
+  }
+});
+
+//update user data
+router.put('/:id', async (req,res) => {
+  try {
+
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
   }
 });
 
