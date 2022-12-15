@@ -1,3 +1,4 @@
+
 const router = require("express").Router();
 const { User } = require("../models");
 
@@ -28,6 +29,16 @@ router.get("/login", (req, res) => {
   }
 
   res.render("login");
+});
+
+router.get('/discover', async (req, res) => {
+  // Send the rendered Handlebars.js template back as the response
+  res.render('discover');
+});
+
+router.get('/my', async (req, res) => {
+  // Send the rendered Handlebars.js template back as the response
+  res.render('myrecipes');
 });
 
 module.exports = router;
