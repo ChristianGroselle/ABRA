@@ -40,7 +40,7 @@ router.get('/myrecipes/', withAuth, async (req, res) => {
       }
     });
     //const recipes = dbMyRecipesData.get({ plain: true });
-    res.render('myrecipes', {
+    res.render('saved', {
       recipes: dbMyRecipesData,
       logged_in: req.session.logged_in,
     });
