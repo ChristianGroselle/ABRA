@@ -1,26 +1,57 @@
 <body>
-  <header>
-    <h2>Saved Recipes</h2>
-  </header>
-  <main class="container">
-    <div class="row">
-      <div class="card col s12">
-        <ul class="people_list">
-          {{#each recipes}}
-            <li>{{this.dataValues.name}} {{log this}}</li>
-            <li>
-              <div class="card-panel offWhite">
-                <div class="row valign-wrapper">
-                  <div class="col s4">
-                    <img
-                      src="{{this.dataValues.img}}"
-                      alt=""
-                      class="circle responsive-img"
-                    />
-                  </div>
-                  <div class="col s8">
-                    <span class="black-text">
-                      <h4>{{this.dataValues.name}}</h4>
+    <header class="row">
+        <h2 class="col s2 offset-s1">Saved Recipes</h2>
+    </header>
+    <main class="container">
+        <div class="row">
+            <div class="card col s12">
+                <ul class="people_list">
+                    {{#each recipes}}
+                    <li>{{this.dataValues.name}} {{log this}}</li>
+                        <li>
+                            <div class="card-panel offWhite">
+                                <div class="row valign-wrapper">
+                                    <div class="col s4">
+                                        <img src="{{this.dataValues.img}}" alt="" class="circle responsive-img">
+                                    </div>
+                                    <div class="col s8">
+                                        <span class="black-text">
+                                            <h4>{{this.dataValues.name}}</h4>
+                                            
+                                            <div>
+                                                Cooking Time: {{this.dataValues.time}}
+                                            </div>
+                                            <div>
+                                                Feeds: {{this.dataValues.yield}}
+                                            </div>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="card-action">
+                                    <div class="col s4">
+                                        <a class="btn waves-effect waves-light left-align" href="{{this.dataValues.url}}">Source</a>
+                                    </div>
+                                    {{#unless this.dataValues.shared}}
+                                    <div class="col s4">
+                                        <a class="btn waves-effect waves-light center-align recBtn" href="#" data-id="{{this.dataValues.id}}">Recomend!</a>
+                                    </div>
+                                    {{/unless}}
+                                    {{#if this.dataValues.shared}}
+                                    <div class="col s4">
+                                        <a class="btn waves-effect waves-light center-align unRecBtn" href="#" data-id="{{this.dataValues.id}}">Un-Share</a>
+                                    </div>
+                                    {{/if}}
+                                    <div class="col s4">
+                                        <a class="btn waves-effect waves-light center-align delBtn" href="#" data-id="{{this.dataValues.id}}">Remove</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    {{/each}}
+                </ul>
+            </div>
+        </div>
+    </main>
 
                       <div>
                         Cooking Time:
