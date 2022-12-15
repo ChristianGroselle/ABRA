@@ -3,6 +3,7 @@ const searchBtnEl = document.querySelector('#searchBtn');
 const listEl = document.querySelector('#recList');
 const prevBtnEl = document.querySelector('#prevBtn');
 const nextBtnEl = document.querySelector('#nextBtn');
+const saveBtnEl = document.querySelectorAll('.saveBtn');
 
 function testBtn(){
     console.log('test');
@@ -89,13 +90,18 @@ function searchRecipes(){
 
 }
 
-function addSavedRecipe(){
+function addSavedRecipe(targetEl){
     data = targetEl.dataset;
     let bulkDataObj = {id:data.id, title:data.title, time:data.time, yield:data.yield, url:data.url, img:data.img};
+    console.log(bulkDataObj);
 }
 
 
 searchBtnEl.addEventListener('click', searchRecipes);
+saveBtnEl.addEventListener('click', function(event) {
+    event.preventDefault();
+    console.log(this.dataset.title);
+})
 
 //pages on hold for now
 // nextBtnEl.addEventListener('click', nextPage);
