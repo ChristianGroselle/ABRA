@@ -1,6 +1,11 @@
 [
   {
-    "name": "Fried Chicken",
-    "user_id": "1"
+    "user_id": "1",
+    "ed_id": "c9bf37296a0126d18781c952dc45a230",
+    "name": "Pizza Frizza recipes",
+    "time": "20 minutes",
+    "yield": "4",
+    "url": "http://www.marthastewart.com/284463/pizza-frizza",
+    "img": "https://edamam-product-images.s3.amazonaws.com/web-img/94a/94aeb549b29ac92dced2ac55765f38f9-m?X-Amz-Security-Token=IQoJb3JpZ2luX2VjEMD%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLWVhc3QtMSJHMEUCIFi4X9%2BDlcfrwPUFpNHQwIx%2BVJC5BH3eHb1%2BvQnyIcY4AiEAt1vsIa6WLMvYVL%2FYf83wxwLygMz%2F1h85iorlwjiuDMkq1QQI6f%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgwxODcwMTcxNTA5ODYiDC3UW0MGiEqdTcR63CqpBIi%2Bz6L6v1bkaxvhXEBNtHCDn3wL%2B142eAGgpAoXHMt6bU0fR7iXjX9L3Lw4qHRG9j9Xi0QWK9JPaIUGxDTj9qFygRR6RqpVlxDKcdrPI6S3nQ4%2B%2FVpo82cu2QTS1t4dWBHHaAIwdomfW%2FMJxiuufNqwvnrhDQQWhsM9THvsEe0CW81Z07SjnkxtaV4mFnUYoJhY4alJ6kj4XGGQZFVP7uJjp69cp70NlWOALVEw40RsBrl0EZfRT7%2B4h0zBurUIH3eLLdHbUixU6Zj2UPW1pFW3lnhoWyT4ZBzFtBSRDgYOhdecaN8JW%2FEB9bb6AiDa%2B3hX88e47qpVxEnAaITEUGXiKrJfiDGh2SZ8U143dpVUNds%2FVIWOkn7toMWbfDRIZJhtfLkkDJOTFz60%2FZjg%2BnQjCtq82KGpF1Qce6rbIo2A4CmFiYJJvy02ZAUeVu5ig%2FlzlDwkgsNTqJllREnlsXDXsKyFMOoCyOHcFFW%2FJEg4YbdXbq%2FRmsttEG167bPEoV5fpJxOueFvDbq8bCIHa7tMPJwjmDhPkUszwuIALIx67nqPZ3kjj5Tiou1UhcJLY%2BpVP%2FF7Sd3Mldx8tzvldtKr9u2HOzGLgjQYDUfARzbv0SXYJ9Ihio1mszDo%2B%2BJ2Or5VwOb1cczN24vR%2BBltDcYCDnWC8DRInnE5H17xFtIsOMwrpDzY5Nv2gtFjrJHeY8Ra0j1wu%2F%2BwmJhtxSUKXLz5I94nqvVY3Z0w56frnAY6qQFngfj0W79LjdbkiVgTe06ity8hT93oLry8t88ncvhygMsVUAup%2B3ciPuBFip2UDW3Wgoo1xWGeSYzvXCmQzbCpZ%2Bjr8Jab2MIe2hSwmbk9SnLrV%2BQt%2BOyk4j%2BnVENiu9JeGJxgl4kdPtHcEWiPu%2FroSMB%2F%2BnRjH4NnT5WSt9qsSj8N%2FSPNzsX%2BxojupzhbuhiNezoYYYrEoXZLEynkpxVvjx0nh3m142k%2F&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20221215T084424Z&X-Amz-SignedHeaders=host&X-Amz-Expires=3600&X-Amz-Credential=ASIASXCYXIIFPUG5SJXI%2F20221215%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=c305c30aee3d5b26ad516237a77836fb28a4bf8087a2f6ddba10dc76ecc752c2"
   }
 ]
