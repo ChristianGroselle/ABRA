@@ -60,9 +60,11 @@ router.get('/shared/', withAuth, async (req, res) => {
         ['upvotes', 'DESC']
       ]
     });
+    //SELECT favrecipes.*, user.id, user.first_name, user.last_name FROM favrecipes LEFT JOIN user ON user_id=user.id;
     //const sharedRecipes = dbSharedData.get({ plain: true });
     res.render('shared', {
       recipes: dbSharedData,
+      
       logged_in: req.session.logged_in,
     });
   } catch (err) {

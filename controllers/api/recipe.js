@@ -16,13 +16,6 @@ router.get('/', async (req, res) => {
 
   router.post("/", async (req, res) => {
     try {
-      console.log("testing");
-      console.log(req.session);
-      console.log("testing 2");
-      console.log(req.session.logged_in);
-      console.log("testing 3");
-      console.log(req.session.user_id);
-      console.log("testing 4");
       const dbRecipeData = await FavRecipes.create({
         user_id: req.session.user_id,
         ed_id: req.body.edId,

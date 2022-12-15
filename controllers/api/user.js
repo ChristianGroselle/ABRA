@@ -8,7 +8,7 @@ router.get("/:id", async (req, res) => {
     console.log(userData);
     // We use .get({ plain: true }) on the object to serialize it so that it only includes the data that we need.
     const user = userData.get({ plain: true });
-    res.render("user", user);
+    res.status(200).json(user);
   } catch (err) {
     res.status(500).json(err);
   }
