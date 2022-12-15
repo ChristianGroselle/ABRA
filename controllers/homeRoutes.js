@@ -1,18 +1,11 @@
-
 const router = require("express").Router();
 const { User } = require("../models");
+const { FavRecipes } = require("../models");
+const withAuth = require('../utils/auth');
 
 router.get("/", async (req, res) => {
   try {
-    // const userData = await User.findAll({
-    //   attributes: { exclude: ["password"] },
-    //   order: [["name", "ASC"]],
-    // });
-
-    // const users = userData.map((project) => project.get({ plain: true }));
-
     res.render("homepage", {
-      // users,
       // Pass the logged in flag to the template
       logged_in: req.session.logged_in,
     });
@@ -31,14 +24,58 @@ router.get("/login", (req, res) => {
   res.render("login");
 });
 
-router.get('/discover', async (req, res) => {
+router.get('/discover', withAuth, async (req, res) => {
   // Send the rendered Handlebars.js template back as the response
-  res.render('discover');
+  res.render('discover', {
+    logged_in: req.session.logged_in, 
+    user: req.session.user_id
+  });
 });
 
-router.get('/my', async (req, res) => {
+router.get('/myrecipes/', withAuth, async (req, res) => {
+  try {
+    const dbMyRecipesData = await FavRecipes.findAll({
+      where: {
+        user_id: req.session.user_id
+      }
+    });
+    //const recipes = dbMyRecipesData.get({ plain: true });
+    res.render('myrecipes', {
+      recipes: dbMyRecipesData,
+      logged_in: req.session.logged_in,
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
+router.get('/shared/', withAuth, async (req, res) => {
+  try {
+    const dbSharedData = await FavRecipes.findAll({
+      where: {
+        shared: 1,
+      },
+      order: [
+        ['upvotes', 'DESC']
+      ]
+    });
+    //SELECT favrecipes.*, user.id, user.first_name, user.last_name FROM favrecipes LEFT JOIN user ON user_id=user.id;
+    //const sharedRecipes = dbSharedData.get({ plain: true });
+    res.render('shared', {
+      recipes: dbSharedData,
+      
+      logged_in: req.session.logged_in,
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
+router.get("/signup", async (req, res) => {
   // Send the rendered Handlebars.js template back as the response
-  res.render('myrecipes');
+  res.render("signup");
 });
 
 module.exports = router;

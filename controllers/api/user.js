@@ -8,12 +8,13 @@ router.get("/:id", async (req, res) => {
     console.log(userData);
     // We use .get({ plain: true }) on the object to serialize it so that it only includes the data that we need.
     const user = userData.get({ plain: true });
-    res.render("user", user);
+    res.status(200).json(user);
   } catch (err) {
     res.status(500).json(err);
   }
 });
 
+//create new user
 router.post("/", async (req, res) => {
   try {
     const dbUserData = await User.create({
@@ -23,11 +24,11 @@ router.post("/", async (req, res) => {
       password: req.body.password,
     });
     // Set up sessions with a 'loggedIn' variable set to `true`
-    req.session.save(() => {
-      req.session.loggedIn = true;
+   // req.session.save(() => {
+      //req.session.loggedIn = true;
 
       res.status(200).json(dbUserData);
-    });
+    //});
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
@@ -76,6 +77,16 @@ router.post("/logout", (req, res) => {
     });
   } else {
     res.status(404).end();
+  }
+});
+
+//update user data
+router.put('/:id', async (req,res) => {
+  try {
+
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
   }
 });
 
