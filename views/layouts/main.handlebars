@@ -36,11 +36,21 @@
 
   </nav>
 
+<!-- navbar for smaller screens (hamburger bars) -->
   <ul class="sidenav" id="mobile-demo">
 
-    <li><a href=""></a></li>
+    <li><a href="/ABRA/views/login.handlebars">Login</a></li>
+    <li><a href="/ABRA/views/discover.handlebars">Discover</a></li>
+    <li><a href="/ABRA/views/myRecipes.handlebars">My Recipes</a></li>
+    {{#if logged_in}}
+    <li>
+      <button class="btn" id="logout">Logout</button>
+    </li>
+    {{/if}}
   
   </ul>
+
+  </header>
 
   <main class="">
 
@@ -75,7 +85,11 @@
   {{#if logged_in}}
       <script src="/js/logout.js"></script>
     {{/if}}
-  <script src="/ABRA/public/materialize/js/materialize.min.js"></script>
+
+  <!-- Linking Scripts -->
+
+  <script src="/js/main.js"></script>
+  <script src="/js/materialize//js/materialize.min.js"></script>
 
 </body>
 
