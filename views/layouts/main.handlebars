@@ -30,6 +30,7 @@
         <ul id="nav-mobile" class="right hide-on-med-and-down">
           <li><a href="discover">Discover</a></li>
           <li><a href="myrecipes">My Recipes</a></li>
+          <li><a href="shared">Shared Recipes</a></li>
           {{#if logged_in}}
             <li><a id="logout">Logout</a></li>
           {{/if}}
@@ -65,9 +66,15 @@
               <div class="col l4 offset-12 s12 right">
                 <h5 class="white-text">Links</h5>
                 <ul class="">
-                  <li><a class="grey-text text-lighten-3" href="login">Login</a></li>
                   <li><a class="grey-text text-lighten-3" href="discover">Discover</a></li>
                   <li><a class="grey-text text-lighten-3" href="myrecipes">My Recipes</a></li>
+                  <li><a class="grey-text text-lighten-3" href="shared">Shared Recipes</a></li>
+                  {{#unless logged_in}}
+                    <li><a class="grey-text text-lighten-3" href="login">Login</a></li>
+                  {{/unless}}
+                  {{#if logged_in}}
+                    <li><a class="grey-text text-lighten-3" href="logout">Logout</a></li>
+                  {{/if}}
                 </ul>
               </div>
             </div>

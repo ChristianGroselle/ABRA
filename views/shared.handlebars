@@ -1,6 +1,6 @@
 <body>
     <header>
-        <h2>Saved Recipes</h2>
+        <h2>Shared Recipes</h2>
     </header>
     <main class="container">
         <div class="row">
@@ -24,6 +24,12 @@
                                             <div>
                                                 Feeds: {{this.dataValues.yield}}
                                             </div>
+                                            <div>
+                                                Shared By: {{this.dataValues.user_id}}
+                                            </div>
+                                            <div>
+                                                Upvotes: {{this.dataValues.upvotes}}
+                                            </div>
                                         </span>
                                     </div>
                                 </div>
@@ -31,19 +37,12 @@
                                     <div class="col s4">
                                         <a class="btn waves-effect waves-light left-align" href="{{this.dataValues.url}}">Source</a>
                                     </div>
-                                    {{#unless this.dataValues.shared}}
                                     <div class="col s4">
-                                        <a class="btn waves-effect waves-light center-align recBtn" href="#" data-id="{{this.dataValues.id}}">Recomend!</a>
+                                        <a class="btn waves-effect waves-light center-align voteBtn" href="#" data-id="{{this.dataValues.id}}">Upvote!</a>
                                     </div>
-                                    {{/unless}}
-                                    {{#if this.dataValues.shared}}
-                                    <div class="col s4">
-                                        <a class="btn waves-effect waves-light center-align unRecBtn" href="#" data-id="{{this.dataValues.id}}">Un-Share</a>
-                                    </div>
-                                    {{/if}}
-                                    <div class="col s4">
+                                    {{!-- <div class="col s4">
                                         <a class="btn waves-effect waves-light center-align delBtn" href="#" data-id="{{this.dataValues.id}}">Remove</a>
-                                    </div>
+                                    </div> --}}
                                 </div>
                             </div>
                         </li>
@@ -55,6 +54,6 @@
 
 <script src="js/materialize.min.js"></script>
 <script src="js/init.js"></script>
-<script src="js/myRecipes.js"></script>
+<script src="js/shared.js"></script>
 
 </body>

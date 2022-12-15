@@ -44,6 +44,53 @@ router.get('/', async (req, res) => {
     }
   });
 
-  
+  router.delete("/:id", async (req, res) => {
+    await FavRecipes.destroy({
+      where: {
+        id: req.params.id,
+      },
+    })
+      .then((deletedRecipe) => {
+        res.status(200).json(deletedRecipe);
+      })
+      .catch((err) => res.status(500).json(err));
+  });
+
+  router.put("/share/:id", async (req, res) => {
+    await FavRecipes.update({ shared: 1}, {
+      where: {
+        id: req.params.id,
+      },
+    })
+    .then((updatedRecipe) => {
+      res.status(200).json(updatedRecipe);
+    })
+    .catch((err) => res.status(500).json(err));
+  });
+
+  router.put("/hide/:id", async (req, res) => {
+    await FavRecipes.update({ shared: 0}, {
+      where: {
+        id: req.params.id,
+      },
+    })
+    .then((updatedRecipe) => {
+      res.status(200).json(updatedRecipe);
+    })
+    .catch((err) => res.status(500).json(err));
+  });
+
+  router.put("/vote/:id", async (req, res) => {
+    await FavRecipes.increment('upvotes', {
+      by: 1,
+      where: {
+        id: req.params.id,
+      },
+    })
+    .then((updatedRecipe) => {
+      res.status(200).json(updatedRecipe);
+    })
+    .catch((err) => res.status(500).json(err));
+  });
 
 module.exports = router;

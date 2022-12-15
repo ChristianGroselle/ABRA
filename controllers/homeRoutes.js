@@ -50,6 +50,27 @@ router.get('/myrecipes/', withAuth, async (req, res) => {
   }
 });
 
+router.get('/shared/', withAuth, async (req, res) => {
+  try {
+    const dbSharedData = await FavRecipes.findAll({
+      where: {
+        shared: 1,
+      },
+      order: [
+        ['upvotes', 'DESC']
+      ]
+    });
+    //const sharedRecipes = dbSharedData.get({ plain: true });
+    res.render('shared', {
+      recipes: dbSharedData,
+      logged_in: req.session.logged_in,
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
 router.get("/signup", async (req, res) => {
   // Send the rendered Handlebars.js template back as the response
   res.render("signup");
