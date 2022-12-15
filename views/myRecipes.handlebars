@@ -7,7 +7,6 @@
             <div class="card col s12">
                 <ul class="people_list">
                     {{#each recipes}}
-                    <li>{{this.dataValues.name}} {{log this}}</li>
                         <li>
                             <div class="card-panel offWhite">
                                 <div class="row valign-wrapper">
@@ -29,7 +28,7 @@
                                 </div>
                                 <div class="card-action">
                                     <div class="col s4">
-                                        <a class="btn waves-effect waves-light left-align" href="{{this.dataValues.url}}">Source</a>
+                                        <a class="btn waves-effect waves-light left-align" href="{{this.dataValues.url}}" target="_blank">Source</a>
                                     </div>
                                     {{#unless this.dataValues.shared}}
                                     <div class="col s4">
@@ -51,60 +50,7 @@
                 </ul>
             </div>
         </div>
-    </main>
-
-                      <div>
-                        Cooking Time:
-                        {{this.dataValues.time}}
-                      </div>
-                      <div>
-                        Feeds:
-                        {{this.dataValues.yield}}
-                      </div>
-                    </span>
-                  </div>
-                </div>
-                <div class="card-action">
-                  <div class="col s4">
-                    <a
-                      class="btn waves-effect waves-light left-align"
-                      href="{{this.dataValues.url}}"
-                      target="_blank"
-                    >Source</a>
-                  </div>
-                  {{#unless this.dataValues.shared}}
-                    <div class="col s4">
-                      <a
-                        class="btn waves-effect waves-light center-align recBtn"
-                        href="#"
-                        data-id="{{this.dataValues.id}}"
-                      >Recommend!</a>
-                    </div>
-                  {{/unless}}
-                  {{#if this.dataValues.shared}}
-                    <div class="col s4">
-                      <a
-                        class="btn waves-effect waves-light center-align unRecBtn"
-                        href="#"
-                        data-id="{{this.dataValues.id}}"
-                      >Un-Share</a>
-                    </div>
-                  {{/if}}
-                  <div class="col s4">
-                    <a
-                      class="btn waves-effect waves-light center-align delBtn"
-                      href="#"
-                      data-id="{{this.dataValues.id}}"
-                    >Remove</a>
-                  </div>
-                </div>
-              </div>
-            </li>
-          {{/each}}
-        </ul>
-      </div>
-    </div>
-  </main>
+    </main>                
 
   <script src="js/materialize.min.js"></script>
   <script src="js/init.js"></script>
