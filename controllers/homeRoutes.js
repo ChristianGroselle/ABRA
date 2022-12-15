@@ -1,19 +1,9 @@
-
 const router = require("express").Router();
 const { User } = require("../models");
 
 router.get("/", async (req, res) => {
   try {
-    // const userData = await User.findAll({
-    //   attributes: { exclude: ["password"] },
-    //   order: [["name", "ASC"]],
-    // });
-
-    // const users = userData.map((project) => project.get({ plain: true }));
-
     res.render("homepage", {
-      // users,
-      // Pass the logged in flag to the template
       logged_in: req.session.logged_in,
     });
   } catch (err) {
@@ -31,14 +21,19 @@ router.get("/login", (req, res) => {
   res.render("login");
 });
 
-router.get('/discover', async (req, res) => {
+router.get("/discover", async (req, res) => {
   // Send the rendered Handlebars.js template back as the response
-  res.render('discover');
+  res.render("discover");
 });
 
-router.get('/my', async (req, res) => {
+router.get("/myrecipes", async (req, res) => {
   // Send the rendered Handlebars.js template back as the response
-  res.render('myrecipes');
+  res.render("myrecipes");
+});
+
+router.get("/signup", async (req, res) => {
+  // Send the rendered Handlebars.js template back as the response
+  res.render("signup");
 });
 
 module.exports = router;

@@ -1,81 +1,99 @@
-
-<!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="css/style.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-         <!--Import materialize.css-->
-      <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="css/style.css" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <!--Import materialize.css-->
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="css/materialize.min.css"
+      media="screen,projection"
+    />
     <title>ABRA - Home</title>
-</head>
+  </head>
 
-<body>
-  
-  <header>
+  <body>
 
-    <nav>
+    <header>
 
-    <div class="nav-wrapper z-depth-2 orange">
-      <a href="/ABRA/views/homepage.handlebars" class="brand-logo">Logo</a>
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href="/ABRA/views/login.handlebars">Login</a></li>
-        <li><a href="/ABRA/views/discover.handlebars">Discover</a></li>
-        <li><a href="/ABRA/views/myRecipes.handlebars">My Recipes</a></li>
-        {{#if logged_in}}
-        <li>
-          <button class="btn" id="logout">Logout</button>
-        </li>
-        {{/if}}
-        <!-- My Recipes will direct to login page until user is logged in -->
-      </ul>
-    </div>
+      <nav>
 
-  </nav>
+        <div class="nav-wrapper z-depth-2 orange">
+          <a href="/" class="brand-logo">Logo</a>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a href="/login">Login</a></li>
+            <li><a href="/discover">Discover</a></li>
+            <li><a href="/myrecipes">My Recipes</a></li>
+            {{#if logged_in}}
+              <li>
+                <button class="btn" id="logout">Logout</button>
+              </li>
+            {{/if}}
+            <!-- My Recipes will direct to login page until user is logged in -->
+          </ul>
+        </div>
 
-  <ul class="sidenav" id="mobile-demo">
+      </nav>
 
-    <li><a href=""></a></li>
-  
-  </ul>
+    </header>
 
-  <main class="">
+    <ul class="sidenav" id="mobile-demo">
 
-    <!-- Render the contents of the sub layout here -->
-    {{{ body }}}
-  
-  </main>
+      <li><a href=""></a></li>
 
-  <footer class="page-footer z-depth-2 orange darken-3">
-          <div class="container">
-            <div class="row">
-              <div class="col l6 s12">
-                <h5 class="white-text">Footer Content</h5>
-                <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
-              </div>
-              <div class="col l4 offset-12 s12 right">
-                <h5 class="white-text">Links</h5>
-                <ul class="">
-                  <li><a class="grey-text text-lighten-3" href="/ABRA/views/login.handlebars">Login</a></li>
-                  <li><a class="grey-text text-lighten-3" href="/ABRA/views/discover.handlebars">Discover</a></li>
-                  <li><a class="grey-text text-lighten-3" href="/ABRA/views/login.handlebars">My Recipes</a></li>
-                </ul>
-              </div>
-            </div>
+    </ul>
+
+    <main class="">
+
+      <!-- Render the contents of the sub layout here -->
+      {{{body}}}
+
+    </main>
+
+    <footer class="page-footer z-depth-2 orange darken-3">
+      <div class="container">
+        <div class="row">
+          <div class="col l6 s12">
+            <h5 class="white-text">Footer Content</h5>
+            <p class="grey-text text-lighten-4">You can use rows and columns
+              here to organize your footer content.</p>
           </div>
-          <div class="footer-copyright">
-            <div class="container center">
-            © 2022 ABRA
-            </div>
+          <div class="col l4 offset-12 s12 right">
+            <h5 class="white-text">Links</h5>
+            <ul class="">
+              <li><a
+                  class="grey-text text-lighten-3"
+                  href="/ABRA/views/login.handlebars"
+                >Login</a></li>
+              <li><a
+                  class="grey-text text-lighten-3"
+                  href="/ABRA/views/discover.handlebars"
+                >Discover</a></li>
+              <li><a
+                  class="grey-text text-lighten-3"
+                  href="/ABRA/views/login.handlebars"
+                >My Recipes</a></li>
+            </ul>
           </div>
-        </footer>
-  {{#if logged_in}}
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <div class="container center">
+          © 2022 ABRA
+        </div>
+      </div>
+    </footer>
+    {{#if logged_in}}
       <script src="/js/logout.js"></script>
     {{/if}}
-  <script src="/ABRA/public/materialize/js/materialize.min.js"></script>
+    <script src="/ABRA/public/materialize/js/materialize.min.js"></script>
 
-</body>
+  </body>
 
 </html>
