@@ -62,6 +62,21 @@ THEN I can view the source or upvote the recipe
 WHEN I click the logo/title\
 THEN I am taken to the homepage
 
+## Technologies Used
+
+HTML\
+CSS\
+Materialize.js\
+Sequelize\
+Node.js\
+Express.js\
+BCrypt\
+Dotenv\
+JavaScript\
+MySQL\
+Heroku\
+Edamam API
+
 ## Screenshots
 
 ![abrass1](https://user-images.githubusercontent.com/111789697/207986474-ce1ac7f3-248b-42f3-b7da-0aad26ee5b98.png)
